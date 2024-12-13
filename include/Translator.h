@@ -117,9 +117,6 @@ public:
 		string W;
 		size_t number_status = 0;
 
-		if (!W.empty())
-			terms.push_back(new Number(stod(W)));
-
 		for (size_t i = 0; i < expression.size(); ++i)
 		{
 			if (!number_status)
@@ -173,6 +170,10 @@ public:
 								throw ("Error");
 			}
 		}
+
+		if (!W.empty())
+			terms.push_back(new Number(stod(W)));
+
 	}
 
 	void print_expression()
